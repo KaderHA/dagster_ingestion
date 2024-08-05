@@ -12,7 +12,7 @@ from dagster_databricks.pipes import (
     PipesDbfsMessageReader,
 )
 
-from transformation.resources import DatabricksResource
+from ingestion.resources import DatabricksResource
 
 
 @asset
