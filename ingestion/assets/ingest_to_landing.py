@@ -1,10 +1,15 @@
-from typing import Dict
 import sys
 
-from dagster import AssetExecutionContext, ResourceParam, asset, open_pipes_session
+from dagster import (
+    AssetExecutionContext,
+    Config,
+    Field,
+    ResourceParam,
+    asset,
+    open_pipes_session,
+)
 
 from databricks.sdk import WorkspaceClient
-from databricks.sdk.service import jobs
 
 from dagster_databricks.pipes import (
     PipesDbfsContextInjector,
@@ -13,11 +18,22 @@ from dagster_databricks.pipes import (
 )
 
 from ingestion.resources import DatabricksResource
+<<<<<<< Updated upstream:ingestion/assets.py
+=======
+
+
+class NotebookConfig(Config):
+    source: str = Field(description=("Path to source data"))
+    dest: str = Field(description=("Path to destination data"))
+    notebook_path: str = Field(description=("Path to notebook on Databricks"))
+    cluster_id: str = Field(description=("Databricks cluster id"))
+>>>>>>> Stashed changes:ingestion/assets/ingest_to_landing.py
 
 
 @asset
 def lei_records_landing(
     context: AssetExecutionContext,
+    config: NotebookConfig,
     dbx_client: ResourceParam[WorkspaceClient],
     landing: DatabricksResource,
 ):

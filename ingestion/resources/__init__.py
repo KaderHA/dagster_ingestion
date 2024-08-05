@@ -1,5 +1,5 @@
 from typing import Dict
-from dagster import ConfigurableResource
+from dagster import ConfigurableResource, RunConfig
 from pydantic import Field
 
 from databricks.sdk import WorkspaceClient
@@ -14,7 +14,7 @@ class DatabricksResource(ConfigurableResource):
     notebook_path: str = Field(description=("Path to notebook on Databricks"))
     cluster_id: str = Field(description=("Databricks cluster id"))
 
-    def launch_databricks_notebook(self, params: Dict[str, str]):
+    def launch_databricks_notebook(self, config: RunConfig, params: Dict[str, str]):
         params["src"] = self.source
         params["dest"] = self.dest
         task = jobs.SubmitTask(
