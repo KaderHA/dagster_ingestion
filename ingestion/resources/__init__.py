@@ -35,8 +35,6 @@ dbx_landing_resource = DatabricksResource(
     dest="abfss://demo@saintern.dfs.core.windows.net",
     notebook_path="/Users/wm1372b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily",
     cluster_id="0801-080028-op8xsvb6",
-<<<<<<< Updated upstream
-=======
 )
 
 dbx_landing_resource_asset_check = DatabricksResource(
@@ -44,7 +42,6 @@ dbx_landing_resource_asset_check = DatabricksResource(
     dest="abfss://demo@saintern.dfs.core.windows.net",
     notebook_path="/Users/wm1372b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily_asset_check",
     cluster_id="0801-080028-op8xsvb6",
->>>>>>> Stashed changes
 )
 
 dbx_landing_resource_asset_check = DatabricksResource(
