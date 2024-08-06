@@ -14,7 +14,7 @@ class DatabricksResource(ConfigurableResource):
     notebook_path: str = Field(description=("Path to notebook on Databricks"))
     cluster_id: str = Field(description=("Databricks cluster id"))
 
-    def launch_databricks_notebook(self, config: RunConfig, params: Dict[str, str]):
+    def launch_databricks_notebook(self, params: Dict[str, str]):
         params["src"] = self.source
         params["dest"] = self.dest
         task = jobs.SubmitTask(
@@ -33,6 +33,13 @@ class DatabricksResource(ConfigurableResource):
 dbx_landing_resource = DatabricksResource(
     source="https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
     dest="abfss://demo@saintern.dfs.core.windows.net",
-    notebook_path="/Users/wm1371b@norges-bank.no/Shared/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-files_daily",
-    cluster_id="0731-085114-wmrqrgur",
+    notebook_path="/Users/wm1372b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily",
+    cluster_id="0801-080028-op8xsvb6",
+)
+
+dbx_landing_resource_asset_check = DatabricksResource(
+    source="https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
+    dest="abfss://demo@saintern.dfs.core.windows.net",
+    notebook_path="/Users/wm1372b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily_asset_check",
+    cluster_id="0801-080028-op8xsvb6",
 )
