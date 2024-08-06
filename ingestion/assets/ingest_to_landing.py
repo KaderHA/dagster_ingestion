@@ -23,7 +23,7 @@ from dagster_databricks.pipes import (
 from ingestion.resources import DatabricksResource
 
 @asset(
-    group_name="lei_records_ingestion",
+    group_name="lei_records",
     compute_kind="databricks",
 )
 def lei_records_landing(
