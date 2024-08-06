@@ -22,7 +22,10 @@ from dagster_databricks.pipes import (
 
 from ingestion.resources import DatabricksResource
 
-@asset
+@asset(
+    group_name="lei_records_ingestion",
+    compute_kind="databricks",
+)
 def lei_records_landing(
     context: AssetExecutionContext,
     dbx_client: ResourceParam[WorkspaceClient],
