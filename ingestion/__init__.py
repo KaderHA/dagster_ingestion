@@ -17,7 +17,11 @@ defs = Definitions(
     resources={
         "dbx_client": databricks_client_resource,
         "landing": dbx_landing_resource,
+<<<<<<< Updated upstream
         "asset_check_landing": dbx_landing_resource_asset_check,
+=======
+        "landing_asset_check": dbx_landing_resource_asset_check,
+>>>>>>> Stashed changes
     },
     jobs=[ingestion_job],
     schedules=[daily_update_job],
