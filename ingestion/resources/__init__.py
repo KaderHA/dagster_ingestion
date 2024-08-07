@@ -40,13 +40,14 @@ dbx_landing_resource = DatabricksResource(
 dbx_landing_resource_asset_check = DatabricksResource(
     source="https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
     dest="abfss://demo@saintern.dfs.core.windows.net",
-    notebook_path="/Users/wm1372b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily_asset_check",
+    notebook_path="/Users/wm1371b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily_asset_check",
     cluster_id="0801-080028-op8xsvb6",
 )
 
 dbx_landing_resource_asset_check = DatabricksResource(
     source="https://goldencopy.gleif.org/api/v2/golden-copies/publishes",
     dest="abfss://demo@saintern.dfs.core.windows.net",
-    notebook_path="/Users/wm1372b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily_asset_check",
+    notebook_path="/Users/wm1371b@norges-bank.no/.bundle/ingestion/dev/files/src/ingestion/gleif/gleif-lei-records_daily_asset_check",
     cluster_id="0801-080028-op8xsvb6",
 )
+
